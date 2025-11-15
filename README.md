@@ -52,7 +52,7 @@ Sistema básico de gestión de turnos médicos que incluye:
 1.  **Clonar el repositorio:**
 
     ```bash
-    git clone [URL_DE_TU_NUEVO_REPO_FLASK]
+    git clone https://github.com/xSpoony/iturnito-flask.git
     cd iturnito
     ```
 
