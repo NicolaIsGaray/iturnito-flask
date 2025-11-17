@@ -103,7 +103,6 @@ def cambiar_password():
 @paciente_bp.route('/mis-turnos')
 @login_required
 def mis_turnos():
-    # --- ¡LÓGICA AÑADIDA! ---
     paciente_id = current_user.paciente_perfil.id
     
     # Cargar turnos con la info del doctor y el user del doctor
@@ -163,8 +162,6 @@ def confirmar_turno():
         print(f"Error al reservar turno: {e}")
         return jsonify({'success': False, 'message': 'Error interno al procesar la reserva.'}), 500
 
-
-# --- ¡NUEVA RUTA! ---
 @paciente_bp.route('/mis-turnos/<int:turno_id>/cancelar', methods=['POST'])
 @login_required
 def cancelar_turno(turno_id):

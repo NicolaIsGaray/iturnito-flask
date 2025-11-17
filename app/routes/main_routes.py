@@ -18,23 +18,10 @@ def index():
 @main_bp.route('/dashboard')
 @login_required
 def dashboard():
-    """
-    Ruta genérica de dashboard.
-    Redirige al blueprint de dashboard correcto según el rol del usuario.
-    
-    ¡ESTA ES LA CORRECCIÓN CLAVE!
-    Ahora redirige a los blueprints correctos (ej: 'admin.dashboard')
-    en lugar de a otras rutas en 'main' (ej: 'main.admin_dashboard').
-    """
     if current_user.rol == 'admin':
         return redirect(url_for('admin.dashboard'))
     elif current_user.rol == 'doctor':
         return redirect(url_for('doctor.dashboard'))
     else:
-        # Asumimos que el rol por defecto es 'paciente'
         return redirect(url_for('paciente.dashboard'))
-
-# --- NOTA ---
-# Las funciones 'paciente_dashboard', 'doctor_dashboard' y 'admin_dashboard'
-# han sido MOVIDAS a sus respectivos archivos de rutas (paciente_routes.py, etc.)
 
